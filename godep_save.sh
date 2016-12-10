@@ -17,7 +17,7 @@ function f_save(){
 				lib_name=${package_name##*'x/'}
                 echo "go get github.com/golang/${lib_name}"
 				go get github.com/golang/${lib_name}
-				cp github.com/golang/${lib_name} golang.org/x/ -r
+				cp $GOPATH/src/github.com/golang/${lib_name} $GOPATH/src/golang.org/x/ -r
 			else
 				f_save
 			fi
