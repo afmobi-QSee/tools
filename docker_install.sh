@@ -7,6 +7,7 @@ yum install -y yum-utils
 yum-config-manager --add-repo https://docs.docker.com/engine/installation/linux/repo_files/centos/docker.repo
 yum makecache fast
 yum -y install docker-engine
+echo '{ "insecure-registries":["192.168.10.182:5000"] }' > /etc/docker/daemon.json
 systemctl start docker
 
 mv ./docker-compose /usr/local/bin/
